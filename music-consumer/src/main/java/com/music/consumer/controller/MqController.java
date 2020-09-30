@@ -33,6 +33,7 @@ public class MqController {
         Map<String, Object> map = new HashMap();
         map.put("yang", "123");
         map.put("hao", "789");
+        System.out.println("123mq的shiyong");
         channel.basicPublish("musicExchange", "musicRouting", null, JSON.toJSONString(map).getBytes());
 //        添加一个确认监听
         channel.addConfirmListener(new ConfirmListenerImpl());
